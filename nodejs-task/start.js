@@ -3,21 +3,21 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-process.env.PORT=7700
+const env=[];
 
-// const app = require('./app');
 app.set('port', process.env.PORT);
+env.push(process.env.user);
+env.push(process.env.pass);
+env.push(process.env.port);
+
 app.get('/',function(req,res){
-  const env={
-    user:"Shital",
-    pass:"sk",
-    port:7700
-  }
-  res.send("user:"+ env.user+" "+"pass:"+env.pass+" "+"port:"+env.port);
+  
+  res.send("user:"+process.env.user+" "+"pass:"+process.env.pass+" "+"port:"+process.env.port);
   
   })
 const server = app.listen(app.get('port'), () => {
  
   console.log(`Express running → PORT ${server.address().port}`);
 });
+
 
