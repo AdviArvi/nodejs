@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-const env=[];
+const arr=[];
 
-app.set('port', process.env.PORT);
-env.push(process.env.user);
-env.push(process.env.pass);
-env.push(process.env.port);
+app.set('port', 7700);
+arr.push(process.env.user);
+arr.push(process.env.pass);
+arr.push(process.env.port);
 
 app.get('/',function(req,res){
   
